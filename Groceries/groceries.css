@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0ffe0;
+}
+.items {
+    display: flex;
+    justify-content: space-around;
+}
+.item {
+    width: 200px;
+    margin: 20px;
+    text-align: center;
+}
+img {
+    width: 100%;
+    height: auto;
+}

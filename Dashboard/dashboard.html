@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #db4f4f;
+            background-image: url(/Project/Assets/back1.png);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .block {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(145deg, #ff6b6b, #f7d794);
+            border-radius: 50%; /* Circular cloud-like effect */
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+            color: white;
+            margin: 20px;
+            text-align: center;
+            line-height: 150px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            animation: blink 2s infinite ease-in-out; /* Animation added */
+            text-transform: uppercase;
+        }
+
+        .block:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes blink {
+            0% {
+                background: linear-gradient(145deg, #ff6b6b, #f7d794);
+            }
+            25% {
+                background: linear-gradient(145deg, #3826c0, #fd79a8);
+            }
+            50% {
+                background: linear-gradient(145deg, #74b9ff, #1c1c1b);
+            }
+            75% {
+                background: linear-gradient(145deg, #55efc4, #4b3636);
+            }
+            100% {
+                background: linear-gradient(145deg, #ff6b6b, #f7d794);
+            }
+        }
+
+        /* Make sure container is scrollable */
+        html, body {
+            overflow: hidden;
+        }
+
+        .welcome-message {
+            text-align: center;
+            font-size: 50px;
+            color: rgb(10, 45, 202);
+            width: 100%;
+            position: absolute;
+            top: 10px;
+            left: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="welcome-message" id="welcomeMessage">
+        Welcome, <span id="displayName"></span>!
+    </div>
+
+    <div class="container">
+        <div class="block" onclick="window.location.href='/Project/Men/men-needs.html'">Men Needs</div>
+        <div class="block" onclick="window.location.href='/Project/She/she-needs.html'">She Needs</div>
+        <div class="block" onclick="window.location.href='/Project/Home-applications/home-applications.html'">Home Apps</div>
+        <div class="block" onclick="window.location.href='/Project/Groceries/groceries.html'">Groceries</div>
+        <div class="block" onclick="window.location.href='/Project/Electronics/electronics.html'">Electronics</div>
+    </div>
+
+    <script>''
+        document.addEventListener('DOMContentLoaded', function () {
+            // Fetch user name from localStorage and display in welcome message
+            const name = localStorage.getItem('name');
+            document.getElementById('displayName').innerText = name;
+        });
+    </script>
+
+</body>
+</html>
